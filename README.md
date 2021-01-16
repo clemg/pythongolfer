@@ -11,7 +11,7 @@ Inspired by [dflook](https://github.com/dflook/python-minifier)'s minifier
 ![](https://i.imgur.com/88ftMZE.png)
 4. Click the "Golf it!" button
 5. Get the result from the bottom box
-![](https://i.imgur.com/5FvJPen.png)
+![](https://i.imgur.com/CrWZyqU.png)
 
 
 # Q&A
