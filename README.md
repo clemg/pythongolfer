@@ -1,5 +1,5 @@
 # Python golfer
-Code golfer and minifier for Python
+Python code golfer and Python code minifier
 Inspired by [dflook](https://github.com/dflook/python-minifier)'s minifier
 
 # Q&A
@@ -7,11 +7,11 @@ Inspired by [dflook](https://github.com/dflook/python-minifier)'s minifier
 In some cases, like in condigame's clash of codes for example, the goal is to make a program solving a problem but the program needs to be the shortest possible (with the less chars if you prefer). Python is pretty good for this, but you can win even more chars by converting the characters of your code from utf-8 to utf-16. This is very simple to do with IDLE for instance, but this sometime takes too much time and is repetitive.
 This project aims to make this process faster.
 
-
+---
 ### How does it work ?
 It simply takes your input and use a single line of Python code to convert it, and the display it to the screen with the code needed to execute it.
 
-
+---
 ### Why is sometime a white space added to the end ?
 A single utf-16 is represented by two utf-8 chars. It means that is the length of your input code is not even, it is impossible to golf it using this method. To alleviate this problem, it simply adds a white space at the end of your code.
 
