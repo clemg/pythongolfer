@@ -36,7 +36,7 @@ Inspired by [dflook](https://github.com/dflook/python-minifier)'s minifier
 
 # Q&A
 ### Why ?
-In some cases, like in condigame's clash of codes for example, the goal is to make a program solving a problem but the program needs to be the shortest possible (with the less chars if you prefer). Python is pretty good for this, but you can win even more chars by converting the characters of your code from utf-8 to utf-16. This is very simple to do with IDLE for instance, but this sometime takes too much time and is repetitive.
+In some cases, like in Codingame's "Clash of Code" or www.code.golf for example, the goal is to make a program solving a problem but the program needs to be the shortest possible (with the less chars if you prefer). Python is pretty good for this, but you can win even more chars by converting the characters of your code from utf-8 to utf-16. This is very simple to do with IDLE for instance, but this sometime takes too much time and is repetitive.
 This project aims to make this process faster.
 
 ---
