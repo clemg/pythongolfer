@@ -6,7 +6,7 @@ Inspired by [dflook](https://github.com/dflook/python-minifier)'s minifier
 
 
 # Table of Contents
-1. [Demo](#demo)\
+1. [Demo](#demo)
 2. [Q&A](#qa)\
   2.1. [Why ?](#why-)\
   2.2. [How does it work ?](#how-does-it-work-)\
@@ -14,9 +14,9 @@ Inspired by [dflook](https://github.com/dflook/python-minifier)'s minifier
   2.4. [The site is not loading, what should I do ?](#the-site-is-not-loading-what-should-i-do-)\
   2.5. [Does it always make my code shorter ?](#does-it-always-make-my-code-shorter-)\
   2.6. [Are there other automated methods to shorten Python code ?](#are-there-other-automated-methods-to-shorten-python-code-)\
-  2.7. [Can I contribute ?](#can-i-contribute-)\
+  2.7. [Can I contribute ?](#can-i-contribute-)
 3. [Known bugs](#known-bugs)\
-  3.1. [Nothing](#nothing)\
+  3.1. [Nothing](#nothing)
 
 
 
