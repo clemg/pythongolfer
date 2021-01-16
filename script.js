@@ -5,10 +5,6 @@ function init() {
     .catch(() => output.value = "An error occured. Refresh the page or check the logs.");
 }
 
-function render(s) {
-  output.value = "exec(bytes('" + s + "','u16')[2:])";
-}
-
 function golfcode() {
   const code = document.getElementById("code");
   const output = document.getElementById("output");
@@ -18,15 +14,18 @@ function golfcode() {
     }
 
     pyodide.runPythonAsync(`"""` + code.value + `""".encode().decode('utf-16')`)
-      .then(output => render(output))
+      .then(result => {
+        output.value = "exec(chars('" + result + "','u16')[2:])";
+        displayStats();
+      })
       .catch((error) => render(error));
-    displayStats();
-  } catch (error) {
-    output.value = "An error occured. Refresh the page or check the logs.";
-    console.log("An error occured:\n" + error +
-      "\nThis can be because you exceeded memory usage for now. Please try again later.\n" +
-      "Pro tip: it might work in private browsing.");
-  }
+    } catch (error) {
+      output.value = "An error occured. Refresh the page or check the logs.";
+      console.log("An error occured:\n" + error +
+      "\nVisit: https://github.com/Thosquey/pythongolfer/blob/main/README.md#the-site-is-not-loading-what-should-i-do-" +
+      "\nThis can be because you exceeded memory usage for now. Please try again later." +
+      "\nPro tip: it might work in private browsing.");
+    }
 }
 
 function copyOutput() {
@@ -38,31 +37,33 @@ function copyOutput() {
   document.execCommand("copy");
 }
 
-function byteCount(s) {
-  return encodeURI(s).split(/%(?:u[0-9A-F]{2})?[0-9A-F]{2}|./).length - 1;
+function charCount(s) {
+  return s.length;
 }
 
-function calculateBytesCode(s) {
-  var codeBytes = document.getElementById("codeBytes");
-  var codeBytesP = document.getElementById("codeBytesP");
+function calculateCharsCode(s) {
+  var codeChars = document.getElementById("codeChars");
+  var codeCharsP = document.getElementById("codeCharsP");
 
-  if (codeBytesP.style.visibility === "hidden") {
-    codeBytesP.style.visibility = "visible";
+  if (codeCharsP.style.visibility === "hidden") {
+    codeCharsP.style.visibility = "visible";
   }
-  codeBytes.innerHTML = byteCount(code.value);
+
+  codeChars.innerHTML = charCount(code.value);
 }
 
 function displayStats() {
-  var codeBytes = byteCount(document.getElementById("code").value);
-  var golfBytes = byteCount(document.getElementById("output").value);
+  var codeChars = charCount(document.getElementById("code").value);
+  var golfChars = charCount(document.getElementById("output").value);
 
-  var diffBytes = codeBytes - golfBytes;
-  var percentageDiff = (Number(((codeBytes - golfBytes) / codeBytes) * 100).toFixed(2));
+  var diffChars = codeChars - golfChars;
+  var percentageReduction = (Number(((codeChars - golfChars) / codeChars) * 100).toFixed(2));
 
-  document.getElementById("golfBytes").innerHTML = golfBytes;
-  document.getElementById("bytesDiff").innerHTML = diffBytes;
-  document.getElementById("percentageDiff").innerHTML = percentageDiff;
-  
+  document.getElementById("golfChars").innerHTML = golfChars;
+  document.getElementById("charsDiff").innerHTML = diffChars;
+  document.getElementById("percentageReduction").innerHTML = - percentageReduction;
+  document.getElementById("percentageDiff").innerHTML = 100 - percentageReduction;
+
   document.getElementById("stats").style.visibility = "visible";
   document.getElementById("copyButton").style.visibility = "visible";
 }
