@@ -26,3 +26,11 @@ No, it basically can not do this. To exec the code given, it must be coated with
 
 ### Are there other automated methods to shorten Python code ?
 Yes, they are. For instance there is [dflook](https://github.com/dflook/python-minifier)'s Python minifier which is working fine for some inputs. Those two tools combined can be very powerful to golf code fast.
+
+
+### Can I contribute ?
+Of course! Fork the repo and create a pull request.
+
+# Known bugs
+### Stats
+When you convert more than 2 codes in a row without refreshing the page, stats are broken.
