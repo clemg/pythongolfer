@@ -15,7 +15,7 @@ function golfcode() {
 
     pyodide.runPythonAsync(`"""` + code.value + `""".encode().decode('utf-16')`)
       .then(result => {
-        output.value = "exec(chars('" + result + "','u16')[2:])";
+        output.value = "exec(bytes('" + result + "','u16')[2:])";
         displayStats();
       })
       .catch((error) => render(error));
