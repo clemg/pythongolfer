@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Python Golfer</title>
+    <meta charset="utf-8" />
+    <link href="style.css" rel="stylesheet" />
+    <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript">
+        window.languagePluginUrl = "https://cdn.jsdelivr.net/pyodide/v0.16.1/full/";
+    </script>
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.16.1/full/pyodide.js"></script>
+  </head>
+  <body onload="init()">
+    <h1>Python Golfer</h1>
+
+    <a class="links" href="https://github.com/thosquey/pythongolfer" target="_BLANK">Github</a><br />
+    <a class="links" href="https://github.com/thosquey/pythongolfer/readme.md#Q&A" target="_BLANK">Q&A</a>
+
+    <label for="code">Enter your ungolfed Python code</label>
+    <textarea id="code" name="code" oninput="calculateBytesCode(this.value)" rows="10" cols="66">Code goes here...</textarea>
+    <p id="codeBytesP" style="visibility: hidden;"><span id="codeBytes"></span> bytes</p>
+
+    <button class="golfit_button" onclick="golfcode()">Golf it!</button>
+
+    <label for="output">Golfed code</label>
+    <textarea readonly id="output" name="output" rows="10" cols="66"> </textarea><br />
+
+    <button id="copyButton" style="visibility: hidden;" onclick="copyOutput()">copy</button>
+    <p id="stats" style="visibility: hidden;">Stats: <span id="bytesDiff"></span> bytes - <span id="golfBytes"></span> diff - <span id="percentageDiff"></span>% of original size</p>
+    </body>
+</html>
