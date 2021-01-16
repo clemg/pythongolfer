@@ -3,6 +3,16 @@ Python code golfer and Python code minifier
 Inspired by [dflook](https://github.com/dflook/python-minifier)'s minifier
 
 
+
+
+# Table of Contents
+1. [Demo](#demo)
+2. [Q&A](#qa)
+3. [Known bugs](#known-bugs)
+
+
+
+
 # Demo
 1. Go to the [web page](https://clemg.github.io/pythongolfer)
 2. Wait until the result box displays "Ready!":
@@ -12,6 +22,8 @@ Inspired by [dflook](https://github.com/dflook/python-minifier)'s minifier
 4. Click the "Golf it!" button
 5. Get the result from the bottom box
 ![](https://i.imgur.com/CrWZyqU.png)
+
+
 
 
 # Q&A
@@ -42,6 +54,9 @@ Yes, they are. For instance there is [dflook](https://github.com/dflook/python-m
 ---
 ### Can I contribute ?
 Of course! Fork the repo and create a pull request.
+
+
+
 
 # Known bugs
 ### Stats
