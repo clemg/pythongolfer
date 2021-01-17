@@ -18,13 +18,13 @@
     <a class="links" href="https://github.com/clemg/pythongolfer/blob/main/README.md#qa" target="_BLANK">Q&A</a>
 
     <label for="code">Enter your ungolfed Python code</label>
-    <textarea id="code" name="code" oninput="calculateCharsCode(this.value)" rows="10" cols="66">Code goes here...</textarea>
+    <textarea id="code" name="code" oninput="calculateCharsCode(this.value)" spellcheck="false" rows="10" cols="66">Code goes here...</textarea>
     <p id="codeCharsP" style="visibility: hidden;"><span id="codeChars"></span> chars</p>
 
     <button class="golfit_button" onclick="golfcode()">Golf it!</button>
 
     <label for="output">Golfed code</label>
-    <textarea readonly id="output" name="output" rows="10" cols="66"> </textarea><br />
+    <textarea readonly id="output" name="output" spellcheck="false" rows="10" cols="66"> </textarea><br />
 
     <button id="copyButton" style="visibility: hidden;" onclick="copyOutput()">copy</button>
     <p id="stats" style="visibility: hidden;">Stats: <span id="golfChars"></span> chars - <span id="charsDiff"></span> diff - <span id="percentageDiff"></span>% of the original size (<span id="percentageReduction"></span>%)</p>
