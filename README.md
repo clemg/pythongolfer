@@ -30,6 +30,7 @@ Inspired by [dflook](https://github.com/dflook/python-minifier)'s minifier
 4. Click the "Golf it!" button
 5. Get the result from the bottom box
 ![](https://i.imgur.com/CrWZyqU.png)
+6. [Try it online!](https://tio.run/##TY7BSsNAGIQfJy14qaKHvor0ogQ8qWAL9rZ7ENKQS8FAL8KuJHVX222bbg8R@i5hlv77GHGLUAo/w8/wzTDP4@HD0@NV28av8X3nbjyMXzoRuAHbU60hbVCfr8ODQlOWUr3y0y3VEtwGxrFPJKZRKe3n4BW4PvKJCADlXy5RYAuonZt9O6XBUjBBhQCf00ZCLpBr8NJZ6YI/E36yovd/wNBbRR8GssS6OjqFbtRviJ8fZeJ8j7M/PgsllgrVKO1ZSmXlp4YydcIOS3vYhcE6uohGvZuoe3vZH3Tbtnf9Bw "Python 3 – Try It Online")
 
 
 
