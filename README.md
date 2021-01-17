@@ -69,4 +69,4 @@ Of course! Fork the repo and create a pull request.
 
 # Known bugs
 ### Reversed coated code
-Where the ungolfed code contains the precise string `. `, for some reasons, the coated string after the returned code is reversed. It turns into `','u16')[2:])`. Also, this string appears in the middle.
+Where the ungolfed code contains the precise string `. `, for some reasons, the coated string after the returned code is reversed. It turns into `','u16')[2:])`. Also, this string appears in the middle. (See [#2][i2])
