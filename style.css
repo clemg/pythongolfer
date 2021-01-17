@@ -3,18 +3,6 @@ body {
 	text-align: center;
 }
 
-.dark-mode {
-	background-color: black;
-	color: white;
-}
-
-#darkmodeButton {
-	font-size: 20px;
-	left: 8px;
-	position: absolute;
-	top: 8px;
-}
-
 .links {
 	font-size: 18px;
 }
