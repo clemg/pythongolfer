@@ -58,10 +58,11 @@ function displayStats() {
 
   var diffChars = codeChars - golfChars;
   var percentageReduction = (Number(((codeChars - golfChars) / codeChars) * 100).toFixed(2));
+  var negativePercentageReduction = - percentageReduction;
 
   document.getElementById("golfChars").innerHTML = golfChars;
   document.getElementById("charsDiff").innerHTML = diffChars;
-  document.getElementById("percentageReduction").innerHTML = - percentageReduction;
+  document.getElementById("percentageReduction").innerHTML = (negativePercentageReduction < 0 ? "" : "+") + negativePercentageReduction;
   document.getElementById("percentageDiff").innerHTML = 100 - percentageReduction;
 
   document.getElementById("stats").style.visibility = "visible";
