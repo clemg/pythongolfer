@@ -42,7 +42,7 @@ This project aims to make this process faster.
 
 ---
 ### How does it work ?
-It simply takes your input and use a single line of Python code to convert it, and the display it to the screen with the code needed to execute it.
+It simply takes your input and use a single line of Python code to convert it, and then display it to the screen with the code needed to execute it.
 
 ---
 ### Why is sometime a white space added to the end ?
