@@ -1,7 +1,10 @@
 function init() {
   output.value = "Initializing...";
   languagePluginLoader
-    .then(() => (output.value = "Ready!"))
+    .then(() => {
+      output.value = "Ready!";
+      document.getElementById("golfit_button").disabled = false;
+    })
     .catch(() => output.value = "An error occured. Refresh the page or check the logs.");
 }
 

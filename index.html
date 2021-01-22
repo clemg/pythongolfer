@@ -21,7 +21,7 @@
     <textarea id="code" name="code" oninput="calculateCharsCode(this.value)" spellcheck="false" rows="10" cols="66" placeholder="Code goes here..."></textarea>
     <p id="codeCharsP" style="visibility: hidden;"><span id="codeChars"></span> chars</p>
 
-    <button class="golfit_button" onclick="golfcode()">Golf it!</button>
+    <button id="golfit_button" onclick="golfcode()" disabled>Golf it!</button>
 
     <label for="output">Golfed code</label>
     <textarea readonly id="output" name="output" spellcheck="false" rows="10" cols="66"> </textarea><br />
