@@ -31,6 +31,14 @@ function golfcode() {
     }
 }
 
+document.addEventListener("DOMContentLoaded", function() {
+  document.body.addEventListener("keydown", function(event) {
+    if(!(event.keyCode == 13 && (event.metaKey || event.ctrlKey))) return;
+
+    golfcode();
+  });
+});
+
 function copyOutput() {
   var copyText = document.getElementById("output");
 
