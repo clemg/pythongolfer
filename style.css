@@ -31,6 +31,10 @@ label {
 	padding-top: 20px;
 }
 
+::placeholder {
+	color: #000000;
+}
+
 .golfit_button {
 	background-color: white;
 	border: 2px solid #555555;
