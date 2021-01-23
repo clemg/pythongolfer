@@ -1,11 +1,6 @@
 function init() {
   output.value = "Initializing...";
-  languagePluginLoader
-    .then(() => {
-      output.value = "Ready!";
-      document.getElementById("golfit_button").disabled = false;
-    })
-    .catch(() => output.value = "An error occured. Refresh the page or check the logs.");
+  output.value = "Ready!";
 }
 
 function golfcode() {
@@ -13,22 +8,32 @@ function golfcode() {
   const output = document.getElementById("output");
   try {
     if (code.value.length % 2 != 0) {
-      code.value = code.value.concat(" ");
+        code.value = code.value.concat(" ");
     }
 
-    pyodide.runPythonAsync(`"""` + code.value + `""".encode().decode('utf-16')`)
-      .then(result => {
-        output.value = "exec(bytes('" + result + "','u16')[2:])";
-        displayStats();
-      })
-      .catch((error) => render(error));
-    } catch (error) {
-      output.value = "An error occured. Refresh the page or check the logs.";
-      console.log("An error occured:\n" + error +
-      "\nVisit: https://github.com/Thosquey/pythongolfer/blob/main/README.md#the-site-is-not-loading-what-should-i-do-" +
-      "\nThis can be because you exceeded memory usage for now. Please try again later." +
-      "\nPro tip: it might work in private browsing.");
+    var buffer = new ArrayBuffer(code.value.length);
+    var bufferView = new Uint16Array(buffer);
+
+    for (var i = 0, strLen = code.value.length; i < strLen - 1; i += 2) {
+      var c1 = code.value.charCodeAt(i);
+      var c2 = code.value.charCodeAt(i + 1);
+
+      if (c1 > 127 || c2 > 127) {
+        throw("At least one of your code char is invalid.");
+      }
+
+      bufferView[i / 2] = c2 << 8 | c1;
     }
+
+    output.value = "exec(bytes('" + String.fromCharCode.apply(String, bufferView) + "','u16')[2:])";
+    displayStats();
+  } catch (error) {
+    output.value = "An error occured. Refresh the page or check the logs.";
+    console.log("An error occured:\n" + error +
+      "\nVisit: https://github.com/clemg/pythongolfer/blob/main/README.md#qa" +
+      "\nMaybe the problem will be listed there. If not, you can open an issue."
+    );
+  }
 }
 
 document.addEventListener("DOMContentLoaded", function() {
