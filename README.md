@@ -6,20 +6,20 @@ Inspired by [dflook](https://github.com/dflook/python-minifier)'s minifier
 
 
 # Table of Contents
-1. [Demo](#demo)
-2. [Examples](#examples)\
-  2.1 [Primes](#primes)\
-  2.2 [Greatest Common Divisor](#greatest-common-divisor)\
-  2.3 [Biggest int](#biggest-int)
-3. [Q&A](#qa)\
-  3.1. [Why ?](#why-)\
-  3.2. [How does it work ?](#how-does-it-work-)\
-  3.3. [Why is sometime a white space added to the end ?](#why-is-sometime-a-white-space-added-to-the-end-)\
-  3.4. [Does it always make my code shorter ?](#does-it-always-make-my-code-shorter-)\
-  3.5. [Are there other automated methods to shorten Python code ?](#are-there-other-automated-methods-to-shorten-python-code-)\
-  3.6. [Can I contribute ?](#can-i-contribute-)
-4. [Known bugs](#known-bugs)\
-  4.1. [Reversed coated code](#reversed-coated-code)
+1. [Demo](#1---demo)
+2. [Examples](#2---examples)\
+  2.1 [Primes](#21-primes)\
+  2.2 [Greatest Common Divisor](#22-greatest-common-divisor)\
+  2.3 [Biggest int](#23-biggest-int)
+3. [Q&A](#3---qa)\
+  3.1. [Why ?](#31-why-)\
+  3.2. [How does it work ?](#32-how-does-it-work-)\
+  3.3. [Why is sometime a white space added to the end ?](#33-why-is-sometime-a-white-space-added-to-the-end-)\
+  3.4. [Does it always make my code shorter ?](#34-does-it-always-make-my-code-shorter-)\
+  3.5. [Are there other automated methods to shorten Python code ?](#35-are-there-other-automated-methods-to-shorten-python-code-)\
+  3.6. [Can I contribute ?](#36-can-i-contribute-)
+4. [Known bugs](#4---known-bugs)\
+  4.1. [Reversed coated code](#41-reversed-coated-code)
 
 
 
