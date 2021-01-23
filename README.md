@@ -1,3 +1,7 @@
+[![CodeFactor](https://www.codefactor.io/repository/github/clemg/pythongolfer/badge)](https://www.codefactor.io/repository/github/clemg/pythongolfer)
+(![Website](https://img.shields.io/website?down_color=red&down_message=down&up_color=brightgreen&up_message=up&url=https%3A%2F%2Fclemg.github.io%2Fpythongolfer%2F))
+![GitHub](https://img.shields.io/github/license/clemg/pythongolfer?color=brightgreen)
+
 # Python golfer
 Python code golfer and Python code minifier
 Inspired by [dflook](https://github.com/dflook/python-minifier)'s minifier
