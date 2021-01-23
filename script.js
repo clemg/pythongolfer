@@ -73,7 +73,7 @@ function charCount(s) {
   return s.length;
 }
 
-function calculateCharsCode(s) {
+function calculateCharsCode() {
   var codeChars = document.getElementById("codeChars");
   var codeCharsP = document.getElementById("codeCharsP");
 
