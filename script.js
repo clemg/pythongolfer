@@ -5,6 +5,10 @@ function init() {
 function golfcode() {
   const code = document.getElementById("code");
   const output = document.getElementById("output");
+
+  code.value = code.value.replace(/^\s*[\r\n]/gm, ""); // Blank lines
+  code.value = code.value.replace(/\s*$/gm, ""); // Trailling spaces at end of lines
+
   try {
     if (code.value.length % 2 != 0) {
         code.value = code.value.concat(" ");
