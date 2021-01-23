@@ -1,5 +1,4 @@
 function init() {
-  output.value = "Initializing...";
   output.value = "Ready!";
 }
 
