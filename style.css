@@ -33,7 +33,7 @@ label {
 
 #golfit_button {
   background-color: white;
-  border: 2px solid #555555;
+  border: 2px solid #555;
   border-radius: 4px;
   color: black;
   cursor: pointer;
@@ -44,7 +44,7 @@ label {
 }
 
 #golfit_button:hover {
-  background-color: #eeeeee;
+  background-color: #eee;
 }
 
 #output {
