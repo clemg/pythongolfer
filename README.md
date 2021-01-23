@@ -64,4 +64,4 @@ Of course! Fork the repo and create a pull request.
 
 # 3 - Known bugs
 ### Reversed coated code
-Where the ungolfed code contains the precise string `. `, for some reasons, the coated string after the returned code is reversed. It turns into `([:2]('61u','`. Also, this string appears in the middle. (See [#2](https://github.com/clemg/pythongolfer/issues/2))
+Where the ungolfed code contains the precise string `. ` or `+ `, for some reasons, the coated string after the returned code is reversed. It turns into `([:2]('61u','`. Also, this string appears in the middle. (See [#2](https://github.com/clemg/pythongolfer/issues/2))
