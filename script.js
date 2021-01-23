@@ -2,14 +2,6 @@ function init() {
   document.getElementById("output").value = "Ready!";
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-  document.body.addEventListener("keydown", function(event) {
-    if(!(event.keyCode === 13 && (event.metaKey || event.ctrlKey))) { return }
-
-    golfcode();
-  });
-});
-
 function copyOutput() {
   var copyText = document.getElementById("output");
 
@@ -31,7 +23,7 @@ function calculateCharsCode() {
     codeCharsP.style.visibility = "visible";
   }
 
-  codeChars.innerHTML = charCount(document.getElementById("code").value);
+  codeChars.textContent = charCount(document.getElementById("code").value);
 }
 
 function displayStats() {
@@ -42,12 +34,12 @@ function displayStats() {
   var percentageReduction = (Number(((codeChars - golfChars) / codeChars) * 100).toFixed(2));
   var negativePercentageReduction = - percentageReduction;
   
-  document.getElementById("codeChars").innerHTML = charCount(document.getElementById("code").value);
+  document.getElementById("codeChars").textContent = charCount(document.getElementById("code").value);
 
-  document.getElementById("golfChars").innerHTML = golfChars;
-  document.getElementById("charsDiff").innerHTML = diffChars;
-  document.getElementById("percentageReduction").innerHTML = (negativePercentageReduction < 0 ? "" : "+") + negativePercentageReduction;
-  document.getElementById("percentageDiff").innerHTML = 100 - percentageReduction;
+  document.getElementById("golfChars").textContent = golfChars;
+  document.getElementById("charsDiff").textContent = diffChars;
+  document.getElementById("percentageReduction").textContent = (negativePercentageReduction < 0 ? "" : "+") + negativePercentageReduction;
+  document.getElementById("percentageDiff").textContent = 100 - percentageReduction;
   
   document.getElementById("stats").style.visibility = "visible";
   document.getElementById("copyButton").style.visibility = "visible";
@@ -86,7 +78,7 @@ function golfcode() {
       var c2 = code.value.charCodeAt(i + 1);
 
       if ((c1 || c2) > 127) {
-        throw("At least one of your code char is invalid.\nAll your chars in your code must be in the ASCII table.");
+        throw new Error("At least one of your code char is invalid.\nAll your chars in your code must be in the ASCII table.");
       }
 
       bufferView[i / 2] = c2 << 8 | c1;
@@ -96,9 +88,17 @@ function golfcode() {
     displayStats();
   } catch (error) {
     output.value = "An error occured. Refresh the page or check the logs.";
-    console.log("An error occured:\n" + error +
+    throw new Error("An error occured:\n" + error +
       "\nPlease visit: https://github.com/clemg/pythongolfer/blob/main/README.md#qa" +
       "\nMaybe the problem will be listed there. If not, you can open an issue."
     );
   }
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+  document.body.addEventListener("keydown", function(event) {
+    if(!(event.keyCode === 13 && (event.metaKey || event.ctrlKey))) { return; }
+
+    golfcode();
+  });
+});
