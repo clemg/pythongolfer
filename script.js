@@ -14,6 +14,19 @@ function golfcode() {
         code.value = code.value.concat(" ");
     }
 
+    if (code.value.includes("+ ") || code.value.includes(". ")) {
+      if (document.getElementById("errorAlertDiv").childElementCount === 0) {
+        var errorAlert = document.createElement("p");
+        errorAlert.textContent = "Alert: Your code contains \"+ \" or \". \", and this causes a bug which reverses a part of the output. Consider removing this from your input code if the output does not work.";
+
+        document.getElementById("errorAlertDiv").appendChild(errorAlert);
+      }
+    } else {
+      var errorDiv = document.getElementById("errorAlertDiv");
+
+      errorDiv.querySelectorAll("*").forEach(n => n.remove());
+    }
+
     var buffer = new ArrayBuffer(code.value.length);
     var bufferView = new Uint16Array(buffer);
 
@@ -21,7 +34,7 @@ function golfcode() {
       var c1 = code.value.charCodeAt(i);
       var c2 = code.value.charCodeAt(i + 1);
 
-      if (c1 > 127 || c2 > 127) {
+      if ((c1 || c2) > 127) {
         throw("At least one of your code char is invalid.");
       }
 
