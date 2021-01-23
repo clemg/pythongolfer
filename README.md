@@ -7,6 +7,10 @@ Inspired by [dflook](https://github.com/dflook/python-minifier)'s minifier
 
 # Table of Contents
 1. [Demo](#demo)
+2. [Examples](#examples)\
+  2.1 [Primes](#primes)\
+  2.2 [Greatest Common Divisor](#greatest-common-divisor)\
+  2.3 [Biggest int](#biggest-int)
 3. [Q&A](#qa)\
   3.1. [Why ?](#why-)\
   3.2. [How does it work ?](#how-does-it-work-)\
