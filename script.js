@@ -58,11 +58,19 @@ function golfcode() {
     }
 
     if (code.value.includes("+ ") || code.value.includes(". ")) {
+      code.value = code.value.replace("+ "," +").replace(". "," .");
+
       if (document.getElementById("errorAlertDiv").childElementCount === 0) {
         var errorAlert = document.createElement("p");
+        var warning = document.createElement("p");
+        
         errorAlert.textContent = "Alert: Your code contains \"+ \" or \". \", and this causes a bug which reverses a part of the output. Consider removing this from your input code if the output does not work.";
-
+        warning.textContent = "Warning: Since these substrings were found in your code, they all got replaced from \"+ \" to \" +\" and from \". \" to \" .\". If the result code is not working as expected, consider refactoring your code.";
+        
+        errorAlert.style.cssText = "font-size: 18px;color: red;";
+        warning.style.cssText = "font-size: 18px;color: orange;";
         document.getElementById("errorAlertDiv").appendChild(errorAlert);
+        document.getElementById("errorAlertDiv").appendChild(warning);
       }
     } else {
       var errorDiv = document.getElementById("errorAlertDiv");
