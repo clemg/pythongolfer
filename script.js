@@ -3,7 +3,7 @@ function init() {
 }
 
 function copyOutput() {
-  var copyText = document.getElementById("output");
+  let copyText = document.getElementById("output");
 
   copyText.select();
   copyText.setSelectionRange(0, 99999);
@@ -16,8 +16,8 @@ function charCount(s) {
 }
 
 function calculateCharsCode() {
-  var codeChars = document.getElementById("codeChars");
-  var codeCharsP = document.getElementById("codeCharsP");
+  let codeChars = document.getElementById("codeChars");
+  let codeCharsP = document.getElementById("codeCharsP");
 
   if (codeCharsP.style.visibility === "hidden") {
     codeCharsP.style.visibility = "visible";
@@ -27,12 +27,12 @@ function calculateCharsCode() {
 }
 
 function displayStats() {
-  var codeChars = charCount(document.getElementById("code").value);
-  var golfChars = charCount(document.getElementById("output").value);
+  let codeChars = charCount(document.getElementById("code").value);
+  let golfChars = charCount(document.getElementById("output").value);
 
-  var diffChars = codeChars - golfChars;
-  var percentageReduction = (Number(((codeChars - golfChars) / codeChars) * 100).toFixed(2));
-  var negativePercentageReduction = - percentageReduction;
+  let diffChars = codeChars - golfChars;
+  let percentageReduction = (Number(((codeChars - golfChars) / codeChars) * 100).toFixed(2));
+  let negativePercentageReduction = - percentageReduction;
   
   document.getElementById("codeChars").textContent = charCount(document.getElementById("code").value);
 
@@ -61,8 +61,8 @@ function golfcode() {
       code.value = code.value.replace("+ "," +").replace(". "," .");
 
       if (document.getElementById("errorAlertDiv").childElementCount === 0) {
-        var errorAlert = document.createElement("p");
-        var warning = document.createElement("p");
+        let errorAlert = document.createElement("p");
+        let warning = document.createElement("p");
         
         errorAlert.textContent = "Alert: Your code contains \"+ \" or \". \", and this causes a bug which reverses a part of the output. Consider removing this from your input code if the output does not work.";
         warning.textContent = "Warning: Since these substrings were found in your code, they all got replaced from \"+ \" to \" +\" and from \". \" to \" .\". If the result code is not working as expected, consider refactoring your code.";
@@ -73,17 +73,17 @@ function golfcode() {
         document.getElementById("errorAlertDiv").appendChild(warning);
       }
     } else {
-      var errorDiv = document.getElementById("errorAlertDiv");
+      let errorDiv = document.getElementById("errorAlertDiv");
 
       errorDiv.querySelectorAll("*").forEach((n) => n.remove());
     }
 
-    var buffer = new ArrayBuffer(code.value.length);
-    var bufferView = new Uint16Array(buffer);
+    let buffer = new ArrayBuffer(code.value.length);
+    let bufferView = new Uint16Array(buffer);
 
-    for (var i = 0, strLen = code.value.length; i < strLen - 1; i += 2) {
-      var c1 = code.value.charCodeAt(i);
-      var c2 = code.value.charCodeAt(i + 1);
+    for (let i = 0, strLen = code.value.length; i < strLen - 1; i += 2) {
+      let c1 = code.value.charCodeAt(i);
+      let c2 = code.value.charCodeAt(i + 1);
 
       if ((c1 || c2) > 127) {
         throw new Error("At least one of your code char is invalid.\nAll your chars in your code must be in the ASCII table.");
