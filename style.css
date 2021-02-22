@@ -1,52 +1,52 @@
-html,
-body {
-  text-align: center;
+body,
+html {
+	text-align: center
 }
 
 .links {
-  font-size: 18px;
+	font-size: 18px
 }
 
 .links:visited {
-  color: blue;
+	color: #00f
 }
 
 label,
 textarea {
-  font-size: 0.95rem;
-  letter-spacing: 1px;
+	font-size: .95rem;
+	letter-spacing: 1px
 }
 
 textarea {
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: 1px 1px 1px #999;
-  line-height: 1.5;
-  padding: 10px 14px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	box-shadow: 1px 1px 1px #999;
+	line-height: 1.5;
+	padding: 10px 14px
 }
 
 label {
-  display: block;
-  margin-bottom: 10px;
-  padding-top: 20px;
+	display: block;
+	margin-bottom: 10px;
+	padding-top: 20px
 }
 
 #golfit_button {
-  background-color: white;
-  border: 2px solid #555;
-  border-radius: 4px;
-  color: black;
-  cursor: pointer;
-  font-size: 16px;
-  margin: 0 0 10px;
-  padding: 15px 32px;
-  text-align: center;
+	background-color: #fff;
+	border: 2px solid #555;
+	border-radius: 4px;
+	color: #000;
+	cursor: pointer;
+	font-size: 16px;
+	margin: 0 0 10px;
+	padding: 15px 32px;
+	text-align: center
 }
 
 #golfit_button:hover {
-  background-color: #eee;
+	background-color: #eee
 }
 
 #output {
-  background-color: #e3e3e3;
+	background-color: #e3e3e3
 }
