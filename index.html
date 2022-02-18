@@ -17,6 +17,13 @@
     <textarea id="code" name="code" oninput="calculateCharsCode()" spellcheck="false" rows="10" cols="66" placeholder="Code goes here..."></textarea>
     <p id="codeCharsP" style="visibility: hidden;"><span id="codeChars"></span> chars</p>
 
+
+  
+    <input type="checkbox" id="minifyBefore" name="minifyBefore">
+    <label id="minifyBefore" for="minifyBefore">Use dflook's <a href="https://github.com/dflook/python-minifier" target="_BLANK">python minifier</a> before golfing ? (might not reduce size)</label>
+    <br><br> <!-- clean :) -->
+
+
     <button id="golfit_button" onclick="golfcode()">Golf it!</button>
     
     <div id="errorAlertDiv"></div>

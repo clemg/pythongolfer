@@ -47,18 +47,28 @@ function displayStats() {
 
 function golfcode() {
   const code = document.getElementById("code");
+  const minifyBefore = document.getElementById("minifyBefore");
   const output = document.getElementById("output");
 
   code.value = code.value.replace(/^\s*[\r\n]/gm, ""); // Blank lines
   code.value = code.value.replace(/\s*$/gm, ""); // Trailling spaces at end of lines
 
+
+  let codeToGolf;
+  if (minifyBefore.checked) {
+    codeToGolf = minifyCode(code);
+  } else {
+    codeToGolf = code.value;
+  }
+
+
   try {
-    if (code.value.length % 2 !== 0) {
-        code.value = code.value.concat(" ");
+    if (codeToGolf.length % 2 !== 0) {
+      codeToGolf = codeToGolf.concat(" ");
     }
 
-    if (code.value.includes("+ ") || code.value.includes(". ")) {
-      code.value = code.value.replace("+ "," +").replace(". "," .");
+    if (codeToGolf.includes("+ ") || codeToGolf.includes(". ")) {
+      codeToGolf = codeToGolf.replace("+ "," +").replace(". "," .");
 
       if (document.getElementById("errorAlertDiv").childElementCount === 0) {
         let errorAlert = document.createElement("p");
@@ -78,12 +88,12 @@ function golfcode() {
       errorDiv.querySelectorAll("*").forEach((n) => n.remove());
     }
 
-    let buffer = new ArrayBuffer(code.value.length);
+    let buffer = new ArrayBuffer(codeToGolf.length);
     let bufferView = new Uint16Array(buffer);
 
-    for (let i = 0, strLen = code.value.length; i < strLen - 1; i += 2) {
-      let c1 = code.value.charCodeAt(i);
-      let c2 = code.value.charCodeAt(i + 1);
+    for (let i = 0, strLen = codeToGolf.length; i < strLen - 1; i += 2) {
+      let c1 = codeToGolf.charCodeAt(i);
+      let c2 = codeToGolf.charCodeAt(i + 1);
 
       if ((c1 || c2) > 127) {
         throw new Error("At least one of your code char is invalid.\nAll your chars in your code must be in the ASCII table.");
@@ -102,6 +112,33 @@ function golfcode() {
     );
   }
 }
+
+function minifyCode(code) {
+  // Minify using python-minifier
+  let charsWon, minifiedCode;
+  
+  console.log("original code:" + code.value);
+  let request = new XMLHttpRequest();
+  request.open("POST", "http://clemg.pythonanywhere.com/", false);
+  request.setRequestHeader('Content-Type', 'application/json');
+
+  request.send(JSON.stringify({
+    "code": code.value
+  }));
+  
+  if (request.status === 200) {
+    console.log("minified code:" + request.response);
+    let data = JSON.parse(request.response);
+    charsWon = data.chars_won;
+    minifiedCode = data.golfed_code;
+    console.log(charsWon)
+    console.log(minifiedCode)
+
+    return minifiedCode;
+  }
+  
+}
+
 
 document.addEventListener("DOMContentLoaded", function() {
   document.body.addEventListener("keydown", function(event) {
