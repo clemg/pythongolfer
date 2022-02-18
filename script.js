@@ -117,7 +117,6 @@ function minifyCode(code) {
   // Minify using python-minifier
   let charsWon, minifiedCode;
   
-  console.log("original code:" + code.value);
   let request = new XMLHttpRequest();
   request.open("POST", "https://clemg.pythonanywhere.com/", false);
   request.setRequestHeader('Content-Type', 'application/json');
@@ -127,12 +126,9 @@ function minifyCode(code) {
   }));
   
   if (request.status === 200) {
-    console.log("minified code:" + request.response);
     let data = JSON.parse(request.response);
     charsWon = data.chars_won;
     minifiedCode = data.golfed_code;
-    console.log(charsWon)
-    console.log(minifiedCode)
 
     return minifiedCode;
   }
