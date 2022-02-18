@@ -119,7 +119,7 @@ function minifyCode(code) {
   
   console.log("original code:" + code.value);
   let request = new XMLHttpRequest();
-  request.open("POST", "http://clemg.pythonanywhere.com/", false);
+  request.open("POST", "https://clemg.pythonanywhere.com/", false);
   request.setRequestHeader('Content-Type', 'application/json');
 
   request.send(JSON.stringify({
